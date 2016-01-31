@@ -1,0 +1,51 @@
+ALPS
+====
+
+ALPS - Arch Linux PKGBUILDs
+
+
+                     /\
+                   //  \     _      /\
+       /\_        _//   \   / \/\ _/  \    /\
+     _/   \/\   _/ /     \_/   \_/     \__/ _\
+    /        `./   \_     \_    / //    /    \\
+   //          \_  / \      \  / _     /  /    \
+  //             |/
+
+
+Description
+-----------
+
+Collection of Arch Linux PKGBUILD files with adjustments where the
+original PKGBUILD doesn't meet special requirement or quality standards.
+
+
+Documentation
+-------------
+
+For installation instructions and usage refer to the official Arch Linux
+documentation or 'PKGBUILD(5)', 'makepkg(8)' and 'pacman(8)' man pages.
+
+
+Contributing
+------------
+
+Open an issue or send a pull request on the Github
+(http://github.com/loonies/alps).
+
+
+Authors
+-------
+
+Maintainer:
+
+ - Miodrag Tokić
+
+
+Copyright
+---------
+
+Copyright (C) 2015-2016 Miodrag Tokić.
+
+Released under the MIT License. See the LICENSE file for details.
+
