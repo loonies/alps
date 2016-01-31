@@ -17,6 +17,7 @@ depends=(
     'python-pymysql'
     'python-sqlparse'
     'python-configobj'
+    'python-crypto'
 )
 makedepends=()
 provides=()
