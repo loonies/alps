@@ -16,8 +16,9 @@ ALPS - Arch Linux PKGBUILDs
 Description
 -----------
 
-Collection of Arch Linux PKGBUILD files with adjustments where the
-original PKGBUILD doesn't meet special requirement or quality standards.
+Collection of Arch Linux PKGBUILD files maintained by me. It also
+contains PKGBUILD files with adjustments where the original PKGBUILD
+file doesn't meet special requirement or quality standards.
 
 
 Documentation
