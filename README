@@ -50,3 +50,5 @@ Copyright (C) 2015-2016 Miodrag Tokić.
 
 Released under the MIT License. See the LICENSE file for details.
 
+This package includes PKGBUILD files taken from other packagers. Check
+corresponding files for their authors and licenses.
