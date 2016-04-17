@@ -2,7 +2,7 @@
 # Contributor: Aaron Abbott <aabmass at gmail dot com>
 
 pkgname=mycli
-pkgver=1.5.2
+pkgver=1.6.0
 pkgrel=1
 pkgdesc='CLI for MySQL Database. With auto-completion and syntax highlighting.'
 arch=('any')
@@ -13,7 +13,7 @@ depends=(
     'python'
     'python-click'
     'python-pygments'
-    'python-prompt_toolkit=0.46'
+    'python-prompt_toolkit=0.60'
     'python-pymysql'
     'python-sqlparse'
     'python-configobj'
@@ -27,7 +27,7 @@ backup=()
 options=(!emptydirs)
 
 source=("https://pypi.python.org/packages/source/m/${pkgname}/${pkgname}-${pkgver}.tar.gz")
-md5sums=('5649febe9f92c1f49d5efa605103d14c')
+md5sums=('390ce1ae5b8f9ddca95fb1aa54e2eab2')
 
 build() {
     cd "$srcdir/${pkgname}-${pkgver}"
@@ -36,6 +36,6 @@ build() {
 
 package() {
     cd "$srcdir/${pkgname}-${pkgver}"
-    install -D -m644 LICENSE.txt "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+    install -D -m 644 LICENSE.txt "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
     python setup.py install --root="${pkgdir}" --optimize=1
 }
