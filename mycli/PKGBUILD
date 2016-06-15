@@ -2,7 +2,7 @@
 # Contributor: Aaron Abbott <aabmass at gmail dot com>
 
 pkgname=mycli
-pkgver=1.6.0
+pkgver=1.7.1
 pkgrel=1
 pkgdesc='CLI for MySQL Database. With auto-completion and syntax highlighting.'
 arch=('any')
@@ -13,7 +13,7 @@ depends=(
     'python'
     'python-click'
     'python-pygments'
-    'python-prompt_toolkit=0.60'
+    'python-prompt_toolkit>=1.0.0' 'python-prompt_toolkit<1.1.0'
     'python-pymysql'
     'python-sqlparse'
     'python-configobj'
@@ -26,8 +26,8 @@ replaces=()
 backup=()
 options=(!emptydirs)
 
-source=("https://pypi.python.org/packages/source/m/${pkgname}/${pkgname}-${pkgver}.tar.gz")
-md5sums=('390ce1ae5b8f9ddca95fb1aa54e2eab2')
+source=("https://files.pythonhosted.org/packages/source/m/${pkgname}/${pkgname}-${pkgver}.tar.gz")
+md5sums=('016facc75d562ce41e4dd3242f918c6a')
 
 build() {
     cd "$srcdir/${pkgname}-${pkgver}"
