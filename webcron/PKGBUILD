@@ -1,0 +1,29 @@
+# Maintainer: Miodrag Tokić
+
+pkgname=webcron
+pkgver=0.1.0
+pkgrel=1
+pkgdesc='A simple script that calls remote URLs at defined time periods using systemd timers'
+arch=('any')
+url='https://github.com/loonies/webcron'
+license=('MIT')
+backup=(
+    'etc/webcron/minutely.conf'
+    'etc/webcron/hourly.conf'
+    'etc/webcron/daily.conf'
+    'etc/webcron/weekly.conf'
+    'etc/webcron/monthly.conf'
+    'etc/webcron/quarterly.conf'
+    'etc/webcron/semiannually.conf'
+    'etc/webcron/yearly.conf'
+)
+
+source=("$pkgname-$pkgver.tar.gz::https://github.com/loonies/webcron/archive/$pkgver.tar.gz")
+sha256sums=('321f8f060874c34bc6902f154b1f57880d49513026923b89665154debb2f47b3')
+
+package() {
+    cd "$srcdir/$pkgname-$pkgver"
+
+    make prefix="$pkgdir" install
+    install -D -m 644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}
