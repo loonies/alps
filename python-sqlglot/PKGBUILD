@@ -1,25 +1,30 @@
 # Maintainer: Miodrag Tokić
 
 pkgname=python-sqlglot
-pkgver=17.13.0
+pkgver=23.14.0
 pkgrel=1
 pkgdesc='An easily customizable SQL parser and transpiler'
 arch=('any')
 url='https://github.com/tobymao/sqlglot'
 license=('MIT')
 depends=('python')
-makedepends=('python-setuptools')
+makedepends=(
+    'python-setuptools'
+    'python-build'
+    'python-installer'
+    'python-wheel'
+)
 options=(!emptydirs)
 source=("$pkgname-$pkgver.tar.gz::https://github.com/tobymao/sqlglot/archive/v${pkgver}.tar.gz")
-sha256sums=('deeab401d0bedfe01cadfbb9606d9a630de984f2805bd35953bcc052a4de6c0c')
+sha256sums=('9650626515f4bd320034dd4839b8f87fe9fb163bb01ac7f83718e6c027dba56a')
 
 build() {
     cd "$srcdir/sqlglot-${pkgver}"
-    python setup.py build
+    python -m build --wheel --no-isolation
 }
 
 package() {
     cd "$srcdir/sqlglot-${pkgver}"
     install -D -m 644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-    python setup.py install --root="$pkgdir" --optimize=1
+    python -m installer --destdir="$pkgdir" dist/*.whl
 }
