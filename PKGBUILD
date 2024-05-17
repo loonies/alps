@@ -2,7 +2,7 @@
 
 pkgname=watson
 pkgver=2.1.0
-pkgrel=2
+pkgrel=3
 pkgdesc='A wonderful CLI to track your time!'
 arch=('any')
 url='https://tailordev.github.io/Watson/'
@@ -21,11 +21,23 @@ makedepends=(
     'python-wheel'
 )
 options=(!emptydirs)
-source=("$pkgname-$pkgver.tar.gz::https://github.com/TailorDev/Watson/archive/$pkgver.tar.gz")
-sha256sums=('ba0d23a1437e022f7d331c5a5923e24b3996099a4e140edeb5785f992e0b705b')
+source=(
+    "$pkgname-$pkgver.tar.gz::https://github.com/TailorDev/Watson/archive/$pkgver.tar.gz"
+    'watson.completion.patch'
+    'watson.zsh-completion.patch'
+)
+sha256sums=(
+    'ba0d23a1437e022f7d331c5a5923e24b3996099a4e140edeb5785f992e0b705b'
+    'caf2d2e95e5fd82a3e9075a78a9f516b126b00a30655ef9802cd976dca50cda6'
+    'dcdbd820d157fe79798ad0c33e81dc1edb6052894f8eb47d0429f5d949972f26'
+)
 
 build() {
     cd "$srcdir/Watson-$pkgver"
+
+    patch -N -p1 -i "$srcdir/watson.completion.patch"
+    patch -N -p1 -i "$srcdir/watson.zsh-completion.patch"
+
     python -m build --wheel --no-isolation
 }
 
