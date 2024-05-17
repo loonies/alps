@@ -2,7 +2,7 @@
 
 pkgname=watson
 pkgver=2.1.0
-pkgrel=1
+pkgrel=2
 pkgdesc='A wonderful CLI to track your time!'
 arch=('any')
 url='https://tailordev.github.io/Watson/'
@@ -14,15 +14,19 @@ depends=(
     'python-click-didyoumean'
     'python-requests'
 )
-makedepends=('python-setuptools')
+makedepends=(
+    'python-setuptools'
+    'python-build'
+    'python-installer'
+    'python-wheel'
+)
 options=(!emptydirs)
-
 source=("$pkgname-$pkgver.tar.gz::https://github.com/TailorDev/Watson/archive/$pkgver.tar.gz")
 sha256sums=('ba0d23a1437e022f7d331c5a5923e24b3996099a4e140edeb5785f992e0b705b')
 
 build() {
     cd "$srcdir/Watson-$pkgver"
-    python setup.py build
+    python -m build --wheel --no-isolation
 }
 
 package() {
@@ -33,5 +37,5 @@ package() {
     install -D -m 644 watson.zsh-completion "$pkgdir/usr/share/zsh/site-functions/_$pkgname"
     install -D -m 644 watson.fish "$pkgdir/usr/share/fish/completions/$pkgname.fish"
 
-    python setup.py install --root="$pkgdir" --optimize=1
+    python -m installer --destdir="$pkgdir" dist/*.whl
 }
