@@ -1,13 +1,14 @@
 pkgbase = python-sqlglot
 	pkgdesc = An easily customizable SQL parser and transpiler
 	pkgver = 23.14.0
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/tobymao/sqlglot
 	arch = any
 	license = MIT
-	makedepends = python-setuptools
 	makedepends = python-build
 	makedepends = python-installer
+	makedepends = python-setuptools
+	makedepends = python-setuptools-scm
 	makedepends = python-wheel
 	depends = python
 	options = !emptydirs

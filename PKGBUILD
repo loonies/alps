@@ -2,16 +2,17 @@
 
 pkgname=python-sqlglot
 pkgver=23.14.0
-pkgrel=1
+pkgrel=2
 pkgdesc='An easily customizable SQL parser and transpiler'
 arch=('any')
 url='https://github.com/tobymao/sqlglot'
 license=('MIT')
 depends=('python')
 makedepends=(
-    'python-setuptools'
     'python-build'
     'python-installer'
+    'python-setuptools'
+    'python-setuptools-scm'
     'python-wheel'
 )
 options=(!emptydirs)
