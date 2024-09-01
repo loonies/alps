@@ -2,10 +2,10 @@
 
 pkgname=watson
 pkgver=2.1.0
-pkgrel=3
+pkgrel=4
 pkgdesc='A wonderful CLI to track your time!'
 arch=('any')
-url='https://tailordev.github.io/Watson/'
+url='https://jazzband.github.io/Watson/'
 license=('MIT')
 depends=(
     'python'
@@ -22,7 +22,7 @@ makedepends=(
 )
 options=(!emptydirs)
 source=(
-    "$pkgname-$pkgver.tar.gz::https://github.com/TailorDev/Watson/archive/$pkgver.tar.gz"
+    "$pkgname-$pkgver.tar.gz::https://github.com/jazzband/Watson/archive/$pkgver.tar.gz"
     'watson.completion.patch'
     'watson.zsh-completion.patch'
 )
