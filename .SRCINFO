@@ -1,6 +1,6 @@
 pkgbase = python-sqlglot
 	pkgdesc = An easily customizable SQL parser and transpiler
-	pkgver = 27.7.0
+	pkgver = 27.8.0
 	pkgrel = 1
 	url = https://github.com/tobymao/sqlglot
 	arch = any
@@ -12,7 +12,7 @@ pkgbase = python-sqlglot
 	makedepends = python-setuptools-scm
 	depends = python
 	options = !emptydirs
-	source = python-sqlglot-27.7.0.tar.gz::https://github.com/tobymao/sqlglot/archive/v27.7.0.tar.gz
-	sha256sums = bfd404f02838c362d00bf789aae1f832222471af7801b9aceccd7308f585aeeb
+	source = python-sqlglot-27.8.0.tar.gz::https://github.com/tobymao/sqlglot/archive/v27.8.0.tar.gz
+	sha256sums = 851f83836a411f3620e0a63ef1437336f63be2400f7a2551e0e52c0e3a7ad809
 
 pkgname = python-sqlglot
