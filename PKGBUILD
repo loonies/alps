@@ -3,7 +3,7 @@
 # Contributor: Aaron Abbott <aabmass at gmail dot com>
 
 pkgname=mycli
-pkgver=1.39.1
+pkgver=1.40.0
 pkgrel=1
 pkgdesc='A Terminal Client for MySQL with AutoCompletion and Syntax Highlighting'
 arch=('any')
@@ -20,9 +20,9 @@ depends=(
     'python-sqlglot'
     'python-configobj'
     'python-cli_helpers'
-    'python-pyperclip'
-    'python-pyaes'
+    'python-pycryptodomex'
     'python-pyfzf'
+    'python-pyperclip'
     'python-llm'
 )
 makedepends=(
@@ -37,7 +37,7 @@ optdepends=(
 )
 options=(!emptydirs)
 source=("$pkgname-$pkgver.tar.gz::https://github.com/dbcli/mycli/archive/v${pkgver}.tar.gz")
-sha256sums=('e7b3715d3e57b41979eb0018a83d9e7ee87344675219818983bb2484b5017d41')
+sha256sums=('8802ec2dbfbd8edfbf628c33e277a35388f0b759e4b93d5d09d7e5337f286796')
 
 build() {
     export SETUPTOOLS_SCM_PRETEND_VERSION="$pkgver"
